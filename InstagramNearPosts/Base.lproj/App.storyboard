@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4d8-sw-e4V">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Near Posts-->
+        <scene sceneID="1SU-5s-EDP">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="84t-WF-hJ8" customClass="PostsViewController" customModule="InstagramNearPosts" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dsa-cE-ruQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="je2-qO-EME"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hWe-RY-j8K">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QNM-Lj-U6R">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QNM-Lj-U6R" firstAttribute="top" secondItem="Dsa-cE-ruQ" secondAttribute="bottom" id="CNa-nJ-e4G"/>
+                            <constraint firstItem="je2-qO-EME" firstAttribute="top" secondItem="QNM-Lj-U6R" secondAttribute="bottom" id="Rvg-SY-po1"/>
+                            <constraint firstAttribute="trailing" secondItem="QNM-Lj-U6R" secondAttribute="trailing" id="UYS-c8-l3L"/>
+                            <constraint firstItem="QNM-Lj-U6R" firstAttribute="leading" secondItem="hWe-RY-j8K" secondAttribute="leading" id="j3d-tz-fSh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Near Posts" id="auV-Cz-psQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ddd-3P-eRQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1957.5999999999999" y="-242.42878560719643"/>
+        </scene>
+        <!--User Profile-->
+        <scene sceneID="hpl-e4-tV3">
+            <objects>
+                <viewController id="Cde-ne-OUn" customClass="UserViewController" customModule="InstagramNearPosts" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ie4-OJ-jst"/>
+                        <viewControllerLayoutGuide type="bottom" id="1Ji-JX-0fs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wUi-Ec-0hK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="User Profile" id="bSR-HZ-CdR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jUh-tl-wlm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1959" y="509"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="gsP-Ao-fH4">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="4d8-sw-e4V" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="ofw-Gf-jBy">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="WJN-Cs-8BS" kind="relationship" relationship="viewControllers" id="jfC-bl-ii9"/>
+                        <segue destination="3oO-z6-clu" kind="relationship" relationship="viewControllers" id="e4C-Fl-C5Z"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CZ5-a6-Qsm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="165.59999999999999" y="133.5832083958021"/>
+        </scene>
+        <!--Posts-->
+        <scene sceneID="yMo-dK-sq0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WJN-Cs-8BS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Posts" id="ZP8-Tg-b2l"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="0cS-cg-O64">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="84t-WF-hJ8" kind="relationship" relationship="rootViewController" id="bVg-go-Md9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MoP-Ln-RUa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1090" y="-242"/>
+        </scene>
+        <!--User-->
+        <scene sceneID="hyd-rY-8Tu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3oO-z6-clu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="User" id="cP4-jZ-9vq"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="GgM-ka-tiE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Cde-ne-OUn" kind="relationship" relationship="rootViewController" id="okl-0t-G7A"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f2a-Ia-gDE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1090" y="508"/>
+        </scene>
+    </scenes>
+</document>

@@ -55,11 +55,12 @@ class ApiController {
         case .success(let value):
             completion(Result.success(value))
         case .failure(let error):
-            guard let statusCode = response.response?.statusCode, statusCode == 400 else {
+            if let statusCode = response.response?.statusCode, statusCode == 400 {
                 completion(Result.tokenExpired)
-                return
             }
-            completion(Result.failure(error))
+            else {
+                completion(Result.failure(error))
+            }
         }
     }
     
@@ -68,7 +69,7 @@ class ApiController {
 // MARK: - ApiRouter
 
 public enum ApiRouter: URLRequestConvertible {
-    static let baseURLPath = "https://api.instagram.com/v1"
+    fileprivate static let baseURL = URL(string: "https://api.instagram.com/v1")!
     
     case user(accessToken: String)
     case nearMedia(accessToken: String, lat: Double, lng: Double, distance: Int)
@@ -99,9 +100,7 @@ public enum ApiRouter: URLRequestConvertible {
             }
         }()
         
-        let url = try ApiRouter.baseURLPath.asURL()
-        
-        var request = URLRequest(url: url.appendingPathComponent(path))
+        var request = URLRequest(url: ApiRouter.baseURL.appendingPathComponent(path))
         request.httpMethod = method.rawValue
         request.timeoutInterval = TimeInterval(10 * 1000)
         

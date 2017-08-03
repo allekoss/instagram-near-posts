@@ -26,33 +26,17 @@ class InitialViewController: UIViewController {
     
     // MARK: - Navigation
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == SegueNames.enterLogin.rawValue {
-            guard let navVC = segue.destination as? UINavigationController,
-                let topVC = navVC.topViewController as? LoginViewController
-                else {
-                    return
-            }
-            
-            topVC.delegate = self
-        }
+    @IBAction func showInitialScreen(segue: UIStoryboardSegue) {}
+    
+    @IBAction func loginError(segue: UIStoryboardSegue) {
+        // TODO: show an error message to the user
+        print("There was an error while logging in.")
     }
     
-}
-
-extension InitialViewController: LoginViewControllerDelegate {
-    
-    func loginSuccessful() {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    func loginFail() {
-        dismiss(animated: true, completion: nil)
-        print("Error while getting the token")
-    }
-    
-    func loginCancel() {
-        dismiss(animated: true, completion: nil)
+    @IBAction func tokenExpired(segue: UIStoryboardSegue) {
+        // TODO: show an information message to the user
+        _ = AccessToken.delete()
+        print("It seems your token expired or was revoked.")
     }
     
 }

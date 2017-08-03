@@ -8,44 +8,40 @@
 
 import UIKit
 import WebKit
-
-protocol LoginViewControllerDelegate {
-    func loginSuccessful()
-    func loginFail()
-    func loginCancel()
-}
+import Alamofire
 
 class LoginViewController: UIViewController {
     
     // MARK: Properties
     
     var webView: WKWebView!
-    var delegate: LoginViewControllerDelegate?
     
     // MARK: Life Cycle
     
     override func loadView() {
         let config = WKWebViewConfiguration()
+        config.websiteDataStore = WKWebsiteDataStore.nonPersistent() //This allows to show the login page again, once the token expired.
+        
         webView = WKWebView(frame: .zero, configuration: config)
         webView.navigationDelegate = self
+        
         view = webView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let clientID = "e091762ad38d432893f29c6009edad09"
-        let redirectUrl = "https://www.linkedin.com/in/allekoss/"
+        var parameters = [String: String]()
+        parameters["client_id"] = "e091762ad38d432893f29c6009edad09"
+        parameters["redirect_uri"] = "https://www.linkedin.com/in/allekoss/"
+        parameters["response_type"] = "token"
+        parameters["scope"] = "public_content"
         
-        let authUrl = URL(string: "https://api.instagram.com/oauth/authorize/?client_id=\(clientID)&redirect_uri=\(redirectUrl)&response_type=token&scope=public_content")
-        let myRequest = URLRequest(url: authUrl!)
-        webView.load(myRequest)
-    }
-    
-    // MARK: IBActions
-    
-    @IBAction func dismissViewController(sender: UIBarButtonItem) {
-        delegate?.loginCancel()
+        let baseUrl = URL(string: "https://api.instagram.com/oauth/authorize")!
+        let baseRequest = URLRequest(url: baseUrl)
+        let request = try! URLEncoding.default.encode(baseRequest, with: parameters)
+        
+        webView.load(request)
     }
 
 }
@@ -72,10 +68,10 @@ extension LoginViewController: WKNavigationDelegate {
                 accessToken.remove(at: accessToken.startIndex)
                 
                 if AccessToken.set(token: accessToken) {
-                    delegate?.loginSuccessful()
+                    performSegue(withIdentifier: SegueNames.loginSuccess.rawValue, sender: self)
                 }
                 else {
-                    delegate?.loginFail()
+                    performSegue(withIdentifier: SegueNames.loginError.rawValue, sender: self)
                 }
             }
         }

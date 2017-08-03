@@ -85,12 +85,17 @@
                     <navigationItem key="navigationItem" title="Login &amp; Authorize" id="xb4-He-SgR">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cYg-jJ-4gg">
                             <connections>
-                                <action selector="dismissViewControllerWithSender:" destination="MVO-Rb-1iD" id="Tq6-dT-AuG"/>
+                                <segue destination="u7m-50-Iyp" kind="unwind" identifier="" unwindAction="showInitialScreenWithSegue:" id="5VB-ro-7OI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="u7m-50-Iyp" kind="unwind" identifier="loginError" unwindAction="loginErrorWithSegue:" id="Yt1-xp-MIF"/>
+                        <segue destination="u7m-50-Iyp" kind="unwind" identifier="loginSuccess" unwindAction="showInitialScreenWithSegue:" id="Sxy-tx-9ND"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nmV-cY-0Xr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="u7m-50-Iyp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1361" y="35"/>
         </scene>
@@ -118,7 +123,7 @@
                 <viewControllerPlaceholder storyboardName="App" id="vL0-qZ-Qjx" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VrH-GV-Z0U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-119" y="479"/>
+            <point key="canvasLocation" x="-119" y="507"/>
         </scene>
     </scenes>
 </document>

@@ -35,8 +35,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Near Posts" id="auV-Cz-psQ"/>
+                    <connections>
+                        <segue destination="m48-vf-qJC" kind="unwind" identifier="tokenExpired" unwindAction="tokenExpiredWithSegue:" id="sFD-pc-jSX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ddd-3P-eRQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="m48-vf-qJC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1957.5999999999999" y="-242.42878560719643"/>
         </scene>
@@ -54,8 +58,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="User Profile" id="bSR-HZ-CdR"/>
+                    <connections>
+                        <segue destination="yQZ-jD-SlT" kind="unwind" identifier="tokenExpired" unwindAction="tokenExpiredWithSegue:" id="JEH-tm-dva"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jUh-tl-wlm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="yQZ-jD-SlT" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1959" y="509"/>
         </scene>
@@ -97,11 +105,11 @@
             </objects>
             <point key="canvasLocation" x="1090" y="-242"/>
         </scene>
-        <!--User-->
+        <!--Profile-->
         <scene sceneID="hyd-rY-8Tu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3oO-z6-clu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="User" id="cP4-jZ-9vq"/>
+                    <tabBarItem key="tabBarItem" title="Profile" id="cP4-jZ-9vq"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="GgM-ka-tiE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

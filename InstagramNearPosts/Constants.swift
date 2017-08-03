@@ -9,6 +9,11 @@
 import Foundation
 
 enum SegueNames: String {
+    case loginSuccess = "loginSuccess"
+    case loginError = "loginError"
+    
     case enterLogin = "enterLogin"
     case enterApp = "enterApp"
+    
+    case tokenExpired = "tokenExpired"
 }

@@ -15,10 +15,10 @@ class UserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        apiController.loadUser { (result: ApiController.Result<User>) in
+        apiController.loadUser { [unowned self] (result: ApiController.Result<User>) in
             switch result {
             case .tokenExpired:
-                print("token Expired")
+                self.performSegue(withIdentifier: SegueNames.tokenExpired.rawValue, sender: self)
             case .failure(let error):
                 print(error)
             case .success(let user):

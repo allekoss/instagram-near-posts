@@ -18,10 +18,10 @@ class PostsViewController: UIViewController {
 //        let searchAreaMiami = ApiController.CircularArea(lat: 25.776842, lng: -80.188635, distance: 5000)
         let searchAreaQuito = ApiController.CircularArea(lat: -0.186393, lng: -78.481756, distance: 5000)
         
-        apiController.loadPosts(searchArea: searchAreaQuito) { (result: ApiController.Result<[Post]>) in
+        apiController.loadPosts(searchArea: searchAreaQuito) { [unowned self] (result: ApiController.Result<[Post]>) in
             switch result {
             case .tokenExpired:
-                print("token Expired")
+                self.performSegue(withIdentifier: SegueNames.tokenExpired.rawValue, sender: self)
             case .failure(let error):
                 print(error)
             case .success(let posts):

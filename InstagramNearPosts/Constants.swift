@@ -8,12 +8,12 @@
 
 import Foundation
 
-enum SegueNames: String {
-    case loginSuccess = "loginSuccess"
-    case loginError = "loginError"
+struct Segues {
+    static let loginSuccess = "loginSuccess"
+    static let loginError = "loginError"
     
-    case enterLogin = "enterLogin"
-    case enterApp = "enterApp"
+    static let enterLogin = "enterLogin"
+    static let enterApp = "enterApp"
     
-    case tokenExpired = "tokenExpired"
+    static let tokenExpired = "tokenExpired"
 }

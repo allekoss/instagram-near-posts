@@ -13,12 +13,16 @@ class User: Mappable {
     
     // MARK: Properties
     var id: String!
-    var username: String?
+    var username: String!
     var fullname: String?
     var profilePicture: URL?
     var bio: String?
     var website: String?
     var counts: Counts?
+    
+    required init(id: String) {
+        self.id = id
+    }
     
     required init?(map: Map) {
         

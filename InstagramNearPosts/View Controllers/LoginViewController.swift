@@ -10,10 +10,11 @@ import UIKit
 import WebKit
 import Alamofire
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, SettingsConfigurable {
     
     // MARK: Properties
     
+    var settingsController: SettingsController!
     var webView: WKWebView!
     
     // MARK: Life Cycle
@@ -67,11 +68,13 @@ extension LoginViewController: WKNavigationDelegate {
                 var accessToken = urlSplitted[1]
                 accessToken.remove(at: accessToken.startIndex)
                 
-                if AccessToken.set(token: accessToken) {
-                    performSegue(withIdentifier: SegueNames.loginSuccess.rawValue, sender: self)
+                settingsController.userToken = accessToken
+                
+                if settingsController.isLoggedIn {
+                    performSegue(withIdentifier: Segues.loginSuccess, sender: self)
                 }
                 else {
-                    performSegue(withIdentifier: SegueNames.loginError.rawValue, sender: self)
+                    performSegue(withIdentifier: Segues.loginError, sender: self)
                 }
             }
         }

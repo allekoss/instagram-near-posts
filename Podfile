@@ -9,4 +9,7 @@ target 'InstagramNearPosts' do
   pod 'KeychainSwift'
   pod 'Alamofire', '~> 4.4'
   pod 'AlamofireObjectMapper', '~> 4.0'
+  pod 'AlamofireImage', '~> 3.1'
+  pod 'Permission/Location'
+  pod 'Eureka'
 end

@@ -14,7 +14,12 @@ import AlamofireObjectMapper
 
 class ApiController {
     
-    fileprivate let accessToken: String
+    fileprivate let settingsController: SettingsController
+    fileprivate var accessToken: String {
+        get {
+            return settingsController.userToken ?? ""
+        }
+    }
     
     enum Result<T> {
         case tokenExpired
@@ -28,8 +33,8 @@ class ApiController {
         let distance: Int
     }
     
-    init(accessToken: String) {
-        self.accessToken = accessToken
+    init(settingsController: SettingsController) {
+        self.settingsController = settingsController
     }
     
     func loadUser(completion: @escaping (Result<User>) -> Void) {
@@ -68,7 +73,7 @@ class ApiController {
 
 // MARK: - ApiRouter
 
-public enum ApiRouter: URLRequestConvertible {
+fileprivate enum ApiRouter: URLRequestConvertible {
     fileprivate static let baseURL = URL(string: "https://api.instagram.com/v1")!
     
     case user(accessToken: String)

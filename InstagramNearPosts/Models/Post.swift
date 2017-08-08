@@ -21,10 +21,11 @@ class Post: Mappable {
     var type: Category!
     var user: User!
     var caption: String?
+    var location: String?
     var comments: Int?
     var likes: Int?
-    var images: Images!
-    var videos: Videos?
+    var images: Medias?
+    var videos: Medias?
     
     required init?(map: Map) {
         
@@ -35,6 +36,7 @@ class Post: Mappable {
         type <- (map["type"], EnumTransform())
         user <- map["user"]
         caption <- map["caption.text"]
+        location <- map["location.name"]
         comments <- map["comments.count"]
         likes <- map["likes.count"]
         images <- map["images"]

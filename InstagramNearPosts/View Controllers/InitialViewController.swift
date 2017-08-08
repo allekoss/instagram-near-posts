@@ -8,7 +8,11 @@
 
 import UIKit
 
-class InitialViewController: UIViewController {
+class InitialViewController: UIViewController, SettingsConfigurable {
+    
+    // MARK: - Properties
+    
+    var settingsController: SettingsController!
     
     // MARK: - Life Cycle
     
@@ -19,8 +23,8 @@ class InitialViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if AccessToken.get() != nil {
-            performSegue(withIdentifier: SegueNames.enterApp.rawValue, sender: self)
+        if settingsController.isLoggedIn {
+            performSegue(withIdentifier: Segues.enterApp, sender: self)
         }
     }
     

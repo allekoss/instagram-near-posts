@@ -29,14 +29,14 @@ class Media: Mappable {
     }
 }
 
-// MARK: - Images
+// MARK: - Medias
 
-class Images: Mappable {
+class Medias: Mappable {
     
     // MARK: Properties
     var lowResolution: Media!
     var standardResolution: Media!
-    var thumbnail: Media!
+    var thumbnail: Media?
     
     required init?(map: Map) {
         
@@ -46,23 +46,5 @@ class Images: Mappable {
         lowResolution <- map["low_resolution"]
         standardResolution <- map["standard_resolution"]
         thumbnail <- map["thumbnail"]
-    }
-}
-
-// MARK: - Videos
-
-class Videos: Mappable {
-    
-    // MARK: Properties
-    var lowResolution: Media!
-    var standardResolution: Media!
-    
-    required init?(map: Map) {
-        
-    }
-    
-    func mapping(map: Map) {
-        lowResolution <- map["low_resolution"]
-        standardResolution <- map["standard_resolution"]
     }
 }

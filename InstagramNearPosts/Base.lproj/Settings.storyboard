@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tK1-gA-BR2">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Settings-->
+        <scene sceneID="QWX-FG-msL">
+            <objects>
+                <viewController id="Wud-Vw-XMO" customClass="SettingsViewController" customModule="InstagramNearPosts" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RDD-99-K3c"/>
+                        <viewControllerLayoutGuide type="bottom" id="WRa-dM-mOb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3tq-Zb-Rqe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="9xm-gR-Gwc">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="No3-CV-ffe">
+                            <connections>
+                                <action selector="cancel:" destination="Wud-Vw-XMO" id="Z0F-j4-Mca"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ymF-JQ-zNK">
+                            <connections>
+                                <action selector="saveSettings:" destination="Wud-Vw-XMO" id="8da-61-KXw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Vu-vx-jdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1062" y="137"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Yno-JD-ZhW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tK1-gA-BR2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="YUY-1O-S2O">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Wud-Vw-XMO" kind="relationship" relationship="rootViewController" id="RYj-NH-u0U"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yHh-6h-fgy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="240.80000000000001" y="137.18140929535232"/>
+        </scene>
+    </scenes>
+</document>

@@ -27,21 +27,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="icl-Bg-VnR">
-                                <rect key="frame" x="51.5" y="270" width="272.5" height="127.5"/>
+                                <rect key="frame" x="29.5" y="262" width="316.5" height="145"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Near Posts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xk6-0i-Zmf">
-                                        <rect key="frame" x="0.0" y="0.0" width="272.5" height="57.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="316.5" height="75"/>
                                         <fontDescription key="fontDescription" name="RichardMurray" family="RichardMurray" pointSize="64"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mMS-q0-5GT">
-                                        <rect key="frame" x="0.0" y="89.5" width="272.5" height="38"/>
+                                        <rect key="frame" x="0.0" y="107" width="316.5" height="38"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
                                         <state key="normal" title="Login"/>
                                         <connections>
-                                            <segue destination="8MK-zi-cte" kind="presentation" identifier="enterLogin" id="B5r-qi-F03"/>
+                                            <segue destination="8MK-zi-cte" kind="presentation" identifier="enterLogin" customClass="InjectingSegue" customModule="InstagramNearPosts" customModuleProvider="target" id="B5r-qi-F03"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -62,7 +62,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="vL0-qZ-Qjx" kind="presentation" identifier="enterApp" id="EYB-bX-rit"/>
+                        <segue destination="vL0-qZ-Qjx" kind="presentation" identifier="enterApp" customClass="InjectingSegue" customModule="InstagramNearPosts" customModuleProvider="target" id="EYB-bX-rit"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -104,7 +104,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8MK-zi-cte" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="onc-EX-QJc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="onc-EX-QJc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
